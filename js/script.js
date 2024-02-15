@@ -1,14 +1,14 @@
-console.log(1);
+let numberOfFilms = prompt('Скільки фільмів ви подивилися?', '');
 
-const storeName = 'GloriaMix';
-const storeDescription = {
-	budget: 10000,
-	employees: ['Derek', 'Daimon', 'Richard'],
-	products: {
-		orange: 500,
-		elda: 10
-	},
-	open: true
+
+let PersonalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
 };
 
-console.log(storeDescription);
+PersonalMovieDB.movies[prompt('Котрий з останніх фільмів ви подивилися?', '')] = prompt('Як би ви його оцінили?', '');
+
+console.log(PersonalMovieDB);
