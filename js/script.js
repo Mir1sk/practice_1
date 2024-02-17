@@ -237,3 +237,30 @@ console.log(getTimeFromMinutes(120));
 
 // another practiceСase_6
 
+// need toUpgrade
+
+function findMaxNumber(number1, number2, number3, number4) {
+  let core = 0;
+
+  if (number1 == null || number2 == null || number3 == null || number4 == null) {
+    return 0;
+  }
+
+  let numbers = [number1, number2, number3, number4];
+  
+  for (let i = 0; i < numbers.length; i++) {
+      if (typeof numbers[i] == 'string') {
+          return 0;
+      }
+  }
+  
+  for (let i = 0; i < numbers.length; i++) {
+      if (core < numbers[i]) {
+          core = numbers[i];
+      }
+  }
+  return core;
+
+}
+
+console.log(findMaxNumber(1, 5, 6.6, 45, 48));
