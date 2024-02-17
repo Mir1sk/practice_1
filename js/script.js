@@ -177,7 +177,7 @@ console.log(calculateVolumeAndArea2(5));
 // another practiceСase_4
 
 function getCoupeNumber(number) {
-  if (typeof number == 'string' || number < 0 || !Number.isInteger(number)) {
+  if (number < 0 || !Number.isInteger(number)) {
       return 'Ошибка. Проверьте правильность введенного номера места';
   }
   if ( number == 0 || number > 36) {
@@ -188,9 +188,52 @@ function getCoupeNumber(number) {
       result = i * 4;
       if (number > result && number <= (i+1) * 4) {
           return i+1;
+      } else if (number <= result) {
+        return i;
       }
   }
 }
 
-console.log(getCoupeNumber(23));
+console.log(getCoupeNumber(12));
+
+// another practiceСase_5
+
+function getTimeFromMinutes(number) {
+  if (number < 0 || !Number.isInteger(number)) {
+    return 'Помилка, перевірте введені дані';
+  }
+
+  let result,
+  hour = 0,
+  minutes = 0;
+
+  if (number == 0) {
+    return `Це ${number} годин і ${number} хвилин`;
+  }
+
+  if (number < 60) {
+    return `Це ${hour} годин і ${number} хвилин`;
+  } else if (number == 60) {
+    hour++;
+    return `Це ${hour} година і ${minutes} хвилин`;
+  }
+
+
+  for (let i = 1; i  <= number; i++) {
+    result = i * 60;
+    if (number > result && number <= (i+1) * 60) {
+      hour = i;
+      minutes = number - result;
+      if (minutes == 60) {
+        minutes = 0;
+        hour++;
+      }
+      return `Це ${hour} години і ${minutes} хвилин`;
+    }
+  }
+}
+
+console.log(getTimeFromMinutes(120));
+
+// another practiceСase_6
 
