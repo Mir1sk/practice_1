@@ -316,4 +316,44 @@ function done() {
 
 first('JavaScript', done);
 
-//
+// another practiceСase_9
+
+const personalDate = {
+  name: 'Myroslav',
+  age: '21',
+  gender: 'Male',
+  money: {
+    credit: 500,
+    pocket: 200
+  }
+}
+
+// console.log(personalDate['money']['credit']);
+
+// console.log(personalDate.money.credit);
+
+// console.log(personalDate.money);
+
+// delete personalDate.notebook;
+
+// console.log(personalDate);
+
+// personalDate.notebook = 'HP';
+
+// console.log(personalDate);
+
+let counter = 0;
+for (let key in personalDate) {
+  if (typeof(personalDate[key]) === 'object') {
+    counter++;
+    for (let i in personalDate[key]) {
+      console.log(`${i} зі значенням ${personalDate[key][i]}`);
+    }
+  } else {
+    console.log(`${key} зі значенням ${personalDate[key]}`);
+    counter++;
+  }
+};
+console.log(counter);
+
+console.log(Object.keys(personalDate).length);
