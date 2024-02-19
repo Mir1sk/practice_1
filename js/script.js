@@ -40,7 +40,7 @@ function rememberMyFilms() {
   for (let i = 1; i < 2; i++) {
     let film = prompt('Котрий був з останніх фільмів?', '');
 
-    while (film == '' || film == null || film.length > 50) {
+    while (film == '' || film == null || film.length > 50 || film.trim() === '') {
       alert('Ви неправильно відповіли');
       film = prompt('Котрий був з останніх фільмів?', '');
     }
@@ -264,3 +264,22 @@ function findMaxNumber(number1, number2, number3, number4) {
 }
 
 console.log(findMaxNumber(1, 5, 6.6, 45, 48));
+
+// another practiceСase_7
+
+function fib(number) {
+  if (!Number.isInteger(number) || number == 0) {
+      return '';
+  } else if (number == 1) {
+      return '0';
+  }
+  let result = [0, 1];
+  let resultString = '0 1'
+  for (let i = 2; i < number; i++) {
+      result[i] = (result[i-2] + result[i-1])
+      resultString += ` ${result[i]}`;
+  }
+  return resultString;
+}
+
+console.log(fib(7));
