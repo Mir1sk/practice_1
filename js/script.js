@@ -283,3 +283,37 @@ function fib(number) {
 }
 
 console.log(fib(7));
+
+// another practiceСase_8
+
+function first() {
+  setTimeout(function() {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log('2');
+}
+
+first();
+second();
+
+//
+
+function first(language, callback) {
+  console.log(`Я вивчаю ${language}!`);
+  callback();
+}
+
+first('JS', function() {
+  console.log('Lets goooo!');
+})
+
+function done() {
+  console.log('Я навчився юзати колбек!');
+}
+
+first('JavaScript', done);
+
+//
