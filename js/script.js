@@ -399,3 +399,104 @@ function showProgrammingLangs(plan) {
 
 console.log(showProgrammingLangs(personalPlanPeter));
 
+// another practiceСase_11
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+const familyNone = [];
+
+function showFamily(arr) {
+    if (arr.length === 0) {
+        return 'Семья пуста';
+    }
+    let result = '';
+    for (let i of arr) {
+        result += i + ' ';
+    }
+    return `Семья состоит из: ${result}`;
+    
+}
+
+console.log(showFamily(family));
+console.log(showFamily(familyNone));
+
+// another practiceCase_12
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i].toLowerCase());
+  }
+}
+
+//
+
+function standardizeStrings(arr) {
+  arr.forEach(city => {
+    console.log(city.toLowerCase());
+  })
+  
+}
+standardizeStrings(favoriteCities);
+
+// another practiceCase_13
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    let result = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        result += str[i];
+    }
+    return result;
+
+}
+
+console.log(reverse(someString));
+
+// another practiceCase_14
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+  if (arr.length === 0) {
+      return 'Нет доступных валют';
+  }
+  let result = `Доступные валюты:\n`;
+
+      for (let itemAvailable of arr) {
+      if (itemAvailable !== missingCurr) {
+          result += `${itemAvailable}\n`;
+      }
+  }
+  return result;
+}
+
+// upgrade code
+
+const baseCurrencies2 = ['USD', 'EUR'];
+const additionalCurrencies2 = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+  let str = '';
+  arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+  arr.forEach(function(curr, i) {
+      if (curr !== missingCurr) {
+          str += `${curr}\n`;
+      }
+  });
+
+  // або
+  // for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] === missingCurr) {
+  //         continue;
+  //     }
+  //     str += `${arr[i]}\n`;
+  // }
+
+  return str;
+}
+
+// another practiceCase_15
