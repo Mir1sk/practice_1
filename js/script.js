@@ -357,3 +357,45 @@ for (let key in personalDate) {
 console.log(counter);
 
 console.log(Object.keys(personalDate).length);
+
+// another practiceСase_10
+
+// const arr = [1, 3, 5, 8, 10];
+
+// arr.forEach(function(item, i, arr) {
+//   console.log(`${i}: зі значенням ${item}, всередині масиву [${arr}].`)
+// })
+
+const personalPlanPeter = {
+  name: "Peter",
+  age: "29",
+  skills: {
+      languages: ['ru', 'eng'],
+      programmingLangs: {
+          js: '20%',
+          php: '10%'
+      },
+      exp: '1 month'
+  },
+  showAgeAndLangs: function(plan) {
+    let result = `Мне ${plan.age} и я владею языками: `;
+    for (let key in plan.skills.languages) {
+        result += plan.skills.languages[key].toUpperCase() + ' ';
+    }
+    result.slice(0, -1);
+    return result;
+  }
+};
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+function showProgrammingLangs(plan) {
+  let result = '';
+  for (let lng in plan.skills.programmingLangs) {
+      result += `Язык ${lng} изучен на ${plan.skills.programmingLangs[lng]}\n`;
+  }
+  return result;
+}
+
+console.log(showProgrammingLangs(personalPlanPeter));
+
