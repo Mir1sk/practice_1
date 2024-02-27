@@ -1,125 +1,125 @@
 'use strict';
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-  numberOfFilms = +prompt('Hello скільки фільмів ви переглянули?', '');
+// function start() {
+//   numberOfFilms = +prompt('Hello скільки фільмів ви переглянули?', '');
 
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    alert('Ви неправильно відповіли');
-    numberOfFilms = +prompt('Hello скільки фільмів ви переглянули? Від 0 до 100000', '');
-  }
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     alert('Ви неправильно відповіли');
+//     numberOfFilms = +prompt('Hello скільки фільмів ви переглянули? Від 0 до 100000', '');
+//   }
 
-}
+// }
 
-function detectPersonalLevel() {
-  if (PersonalMovieDB.count <= 10) {
-    alert('Ууу, переглянуто доволі мало фільмів')
-  } else if (PersonalMovieDB.count <= 30) {
-    alert('Ууу, а Ви класичний глядач фільмів')
-  } else if (PersonalMovieDB.count <= 5000) {
-    alert('Уууу, а Ви кіноман')
-  } else if (PersonalMovieDB.count > 5000) {
-    alert('****, щось не вірю вам')
-  } else {alert('Трапилася помилка')}
-}
+// function detectPersonalLevel() {
+//   if (PersonalMovieDB.count <= 10) {
+//     alert('Ууу, переглянуто доволі мало фільмів')
+//   } else if (PersonalMovieDB.count <= 30) {
+//     alert('Ууу, а Ви класичний глядач фільмів')
+//   } else if (PersonalMovieDB.count <= 5000) {
+//     alert('Уууу, а Ви кіноман')
+//   } else if (PersonalMovieDB.count > 5000) {
+//     alert('****, щось не вірю вам')
+//   } else {alert('Трапилася помилка')}
+// }
 
-start();
+// start();
 
-let PersonalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-}
+// let PersonalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// }
 
-detectPersonalLevel();
+// detectPersonalLevel();
 
-//levelUp
-function rememberMyFilms() {
-  for (let i = 1; i < 2; i++) {
-    let film = prompt('Котрий був з останніх фільмів?', '');
+// //levelUp
+// function rememberMyFilms() {
+//   for (let i = 1; i < 2; i++) {
+//     let film = prompt('Котрий був з останніх фільмів?', '');
 
-    while (film == '' || film == null || film.length > 50 || film.trim() === '') {
-      alert('Ви неправильно відповіли');
-      film = prompt('Котрий був з останніх фільмів?', '');
-    }
+//     while (film == '' || film == null || film.length > 50 || film.trim() === '') {
+//       alert('Ви неправильно відповіли');
+//       film = prompt('Котрий був з останніх фільмів?', '');
+//     }
 
-    let rating = +prompt('Як би ви його оцінили? (1 - 10)', '');
+//     let rating = +prompt('Як би ви його оцінили? (1 - 10)', '');
 
-    while (rating == '' || rating == null || isNaN(rating) || rating < 1 || rating > 10) {
-      alert('Ви неправильно відповіли');
-      rating = +prompt('Як би ви його оцінили? Введіть число від 1 до 10', '');
-    }
+//     while (rating == '' || rating == null || isNaN(rating) || rating < 1 || rating > 10) {
+//       alert('Ви неправильно відповіли');
+//       rating = +prompt('Як би ви його оцінили? Введіть число від 1 до 10', '');
+//     }
   
-    if (film != null && rating != null && film != '' && rating != '' && film.length < 50) {
-      PersonalMovieDB.movies[film] = rating;
-      console.log('done');
-    } else {
-      console.log('error');
-      alert('Ви неправильно відповіли, повторіть спробу');
-      i--;
-    }
-  }
-}
+//     if (film != null && rating != null && film != '' && rating != '' && film.length < 50) {
+//       PersonalMovieDB.movies[film] = rating;
+//       console.log('done');
+//     } else {
+//       console.log('error');
+//       alert('Ви неправильно відповіли, повторіть спробу');
+//       i--;
+//     }
+//   }
+// }
 
-rememberMyFilms();
+// rememberMyFilms();
 
-function writeYourGenres() {
-  let result;
-  result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
-  while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
-    alert('Ви неправильно відповіли, введіть число від 1 до 3');
-    result = +prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
-  }
+// function writeYourGenres() {
+//   let result;
+//   result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
+//   while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+//     alert('Ви неправильно відповіли, введіть число від 1 до 3');
+//     result = +prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
+//   }
 
-  if (result == 1) {
-    PersonalMovieDB.genres.push('Criminal');
-  } else if (result == 2) {
-    PersonalMovieDB.genres.push('Horror');
-  } else if (result == 3) {
-    PersonalMovieDB.genres.push('Horror Anime');
-  }
+//   if (result == 1) {
+//     PersonalMovieDB.genres.push('Criminal');
+//   } else if (result == 2) {
+//     PersonalMovieDB.genres.push('Horror');
+//   } else if (result == 3) {
+//     PersonalMovieDB.genres.push('Horror Anime');
+//   }
 
-  result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Action\n2.Drama\n3.Western', '');
-  while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
-    alert('Ви неправильно відповіли, введіть число від 1 до 3');
-    result = prompt('Котрі з трьох ваші улюблені жанри?\n1. Action\n2.Drama\n3.Western', '');
-  }
+//   result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Action\n2.Drama\n3.Western', '');
+//   while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+//     alert('Ви неправильно відповіли, введіть число від 1 до 3');
+//     result = prompt('Котрі з трьох ваші улюблені жанри?\n1. Action\n2.Drama\n3.Western', '');
+//   }
 
-  if (result == 1) {
-    PersonalMovieDB.genres.push('Action');
-  } else if (result == 2) {
-    PersonalMovieDB.genres.push('Drama');
-  } else if (result == 3) {
-    PersonalMovieDB.genres.push('Western');
-  }
+//   if (result == 1) {
+//     PersonalMovieDB.genres.push('Action');
+//   } else if (result == 2) {
+//     PersonalMovieDB.genres.push('Drama');
+//   } else if (result == 3) {
+//     PersonalMovieDB.genres.push('Western');
+//   }
 
-  result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
-  while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
-    alert('Ви неправильно відповіли, введіть число від 1 до 3');
-    result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
-  }
+//   result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
+//   while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+//     alert('Ви неправильно відповіли, введіть число від 1 до 3');
+//     result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
+//   }
 
-  if (result == 1) {
-    PersonalMovieDB.genres.push('Fantasy');
-  } else if (result == 2) {
-    PersonalMovieDB.genres.push('Adventure');
-  } else if (result == 3) {
-    PersonalMovieDB.genres.push('Animation');
-  }
-}
+//   if (result == 1) {
+//     PersonalMovieDB.genres.push('Fantasy');
+//   } else if (result == 2) {
+//     PersonalMovieDB.genres.push('Adventure');
+//   } else if (result == 3) {
+//     PersonalMovieDB.genres.push('Animation');
+//   }
+// }
 
-writeYourGenres();
+// writeYourGenres();
 
-if (PersonalMovieDB.privat == false) {
-  console.log('PersonalMovieDB - public')
-  console.log(PersonalMovieDB);
-} else {
-  console.log('PersonalMovieDB - private')
-}
+// if (PersonalMovieDB.privat == false) {
+//   console.log('PersonalMovieDB - public')
+//   console.log(PersonalMovieDB);
+// } else {
+//   console.log('PersonalMovieDB - private')
+// }
 
-// another practiceCase_2
+// // another practiceCase_2
 
 // function getMathResult(base, number) {
 //   let result = '';
@@ -286,35 +286,35 @@ console.log(fib(7));
 
 // another practiceСase_8
 
-function first() {
-  setTimeout(function() {
-    console.log(1);
-  }, 500);
-}
+// function first() {
+//   setTimeout(function() {
+//     console.log(1);
+//   }, 500);
+// }
 
-function second() {
-  console.log('2');
-}
+// function second() {
+//   console.log('2');
+// }
 
-first();
-second();
+// first();
+// second();
 
-//
+// //
 
-function first(language, callback) {
-  console.log(`Я вивчаю ${language}!`);
-  callback();
-}
+// function first(language, callback) {
+//   console.log(`Я вивчаю ${language}!`);
+//   callback();
+// }
 
-first('JS', function() {
-  console.log('Lets goooo!');
-})
+// first('JS', function() {
+//   console.log('Lets goooo!');
+// })
 
-function done() {
-  console.log('Я навчився юзати колбек!');
-}
+// function done() {
+//   console.log('Я навчився юзати колбек!');
+// }
 
-first('JavaScript', done);
+// first('JavaScript', done);
 
 // another practiceСase_9
 
@@ -500,3 +500,159 @@ function availableCurr(arr, missingCurr) {
 }
 
 // another practiceCase_15
+
+const soldier = {
+  hp: 300,
+  dmg: 100
+}
+
+// lvl up 2
+const richard = Object.create(soldier);
+richard.hp = 500;
+
+// const richard = {
+//   hp: 500
+// }
+
+// richard.__proto__ = soldier;
+// lvl up
+// Object.setPrototypeOf(richard, soldier);
+
+console.log(richard);
+console.log(richard.dmg);
+
+
+// another practiceCase_16
+
+let PersonalMovieDBLvlUp = {
+	count: 0,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
+  start: function() {
+    PersonalMovieDBLvlUp.count = +prompt('Hello скільки фільмів ви переглянули?', '');
+
+    while (PersonalMovieDBLvlUp.count == '' || PersonalMovieDBLvlUp.count == null || isNaN(PersonalMovieDBLvlUp.count)) {
+      alert('Ви неправильно відповіли');
+      PersonalMovieDBLvlUp.count = +prompt('Hello скільки фільмів ви переглянули? Від 0 до 100000', '');
+      }
+    },
+  detectPersonalLevel: function() {
+    if (PersonalMovieDBLvlUp.count <= 10) {
+      alert('Ууу, переглянуто доволі мало фільмів')
+    } else if (PersonalMovieDBLvlUp.count <= 30) {
+      alert('Ууу, а Ви класичний глядач фільмів')
+    } else if (PersonalMovieDBLvlUp.count <= 5000) {
+      alert('Уууу, а Ви кіноман')
+    } else if (PersonalMovieDBLvlUp.count > 5000) {
+      alert('****, щось не вірю вам')
+    } else {alert('Трапилася помилка')}
+  },
+  rememberMyFilms: function() {
+    for (let i = 1; i < 2; i++) {
+      let film = prompt('Котрий був з останніх фільмів?', '');
+  
+      while (film == '' || film == null || film.length > 50 || film.trim() === '') {
+        alert('Ви неправильно відповіли');
+        film = prompt('Котрий був з останніх фільмів?', '');
+      }
+  
+      let rating = +prompt('Як би ви його оцінили? (1 - 10)', '');
+  
+      while (rating == '' || rating == null || isNaN(rating) || rating < 1 || rating > 10) {
+        alert('Ви неправильно відповіли');
+        rating = +prompt('Як би ви його оцінили? Введіть число від 1 до 10', '');
+      }
+    
+      if (film != null && rating != null && film != '' && rating != '' && film.length < 50) {
+        PersonalMovieDBLvlUp.movies[film] = rating;
+        console.log('done');
+      } else {
+        console.log('error');
+        alert('Ви неправильно відповіли, повторіть спробу');
+        i--;
+      }
+    }
+  },
+  writeYourGenres: function() {
+    let result;
+    result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
+    while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+      alert('Ви неправильно відповіли, введіть число від 1 до 3');
+      result = +prompt('Котрі з трьох ваші улюблені жанри?\n1.Criminal\n2.Horror\n3.Horror Anime xd', '');
+    }
+
+    if (result == 1) {
+      PersonalMovieDBLvlUp.genres.push('Criminal');
+    } else if (result == 2) {
+      PersonalMovieDBLvlUp.genres.push('Horror');
+    } else if (result == 3) {
+      PersonalMovieDBLvlUp.genres.push('Horror Anime');
+    }
+
+    result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Action\n2.Drama\n3.Western', '');
+    while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+      alert('Ви неправильно відповіли, введіть число від 1 до 3');
+      result = prompt('Котрі з трьох ваші улюблені жанри?\n1. Action\n2.Drama\n3.Western', '');
+    }
+
+    if (result == 1) {
+      PersonalMovieDBLvlUp.genres.push('Action');
+    } else if (result == 2) {
+      PersonalMovieDBLvlUp.genres.push('Drama');
+    } else if (result == 3) {
+      PersonalMovieDBLvlUp.genres.push('Western');
+    }
+
+    result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
+    while (result == '' || result == null || isNaN(result) || result < 1 || result > 3) {
+      alert('Ви неправильно відповіли, введіть число від 1 до 3');
+      result = prompt('Котрі з трьох ваші улюблені жанри?\n1.Fantasy\n2.Adventure\n3.Animation', '');
+    }
+
+    if (result == 1) {
+      PersonalMovieDBLvlUp.genres.push('Fantasy');
+    } else if (result == 2) {
+      PersonalMovieDBLvlUp.genres.push('Adventure');
+    } else if (result == 3) {
+      PersonalMovieDBLvlUp.genres.push('Animation');
+    }
+  },
+  showDB: function() {
+    if (PersonalMovieDBLvlUp.privat == false) {
+      console.log('PersonalMovieDBLvlUp - public')
+      console.log(PersonalMovieDBLvlUp);
+    } else {
+      console.log('PersonalMovieDBLvlUp - private')
+    }
+  },
+  toggleVisibleMyDB: () => {
+    if (PersonalMovieDBLvlUp.privat == false) {
+      PersonalMovieDBLvlUp.privat = true;
+    } else {
+      PersonalMovieDBLvlUp.privat = false;
+    }
+  },
+  favoriteGenres: () => {
+    PersonalMovieDBLvlUp.genres.forEach((genres, i) => {
+      console.log(`Ваш улюблений жанр #${i+1} - ${genres}`);
+    })
+  }
+}
+
+PersonalMovieDBLvlUp.start();
+
+PersonalMovieDBLvlUp.detectPersonalLevel();
+
+PersonalMovieDBLvlUp.rememberMyFilms();
+
+PersonalMovieDBLvlUp.writeYourGenres();
+
+PersonalMovieDBLvlUp.favoriteGenres();
+
+PersonalMovieDBLvlUp.toggleVisibleMyDB(); // now private
+
+PersonalMovieDBLvlUp.toggleVisibleMyDB(); // now public
+
+PersonalMovieDBLvlUp.showDB();
