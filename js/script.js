@@ -656,3 +656,122 @@ PersonalMovieDBLvlUp.toggleVisibleMyDB(); // now private
 PersonalMovieDBLvlUp.toggleVisibleMyDB(); // now public
 
 PersonalMovieDBLvlUp.showDB();
+
+// another practiceCase_17
+
+const shoppingMallData = {
+  shops: [
+      {
+          width: 10,
+          length: 5
+      },
+      {
+          width: 15,
+          length: 7
+      },
+      {
+          width: 20,
+          length: 5
+      },
+      {
+          width: 8,
+          length: 10
+      }
+  ],
+  height: 5,
+  moneyPer1m3: 30,
+  budget: 50000
+}
+
+function isBudgetEnough(data) {
+  let resultPer1m3 = 0;
+  let shops = [];
+  data.shops.forEach( shop => {
+    const width = shop.width;
+    const length = shop.length;
+    let per1m3 = width * length * data.height;
+    shops.push(per1m3);
+    resultPer1m3 += per1m3;
+  })
+  let moneyNeed = data.moneyPer1m3 * resultPer1m3;
+  if (data.budget >= moneyNeed) {
+    return console.log(`Бюджета достатньо, тому що ${data.budget} більше ніж потрібно ${moneyNeed}`);
+  } else if (data.budget < moneyNeed ) {
+    return console.log(`Бюджета недостатньо, тому що ${data.budget} менше ніж потрібно ${moneyNeed}`);
+  }
+  // console.log(shops);
+  // console.log(resultPer1m3);
+  // console.log(moneyNeed);
+}
+
+isBudgetEnough(shoppingMallData);
+
+// another practiceCase_18
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Tedji'];
+
+function sortStudentsByGroups(arr) {
+  namesRegistry = arr.sort((a, b) => {
+    return a.localeCompare(b);
+  });
+
+  let commandOne = [], commandTwo = [], commandThree = [], otherPlayers = [];
+  namesRegistry.forEach(name => {
+    if (commandOne.length < 3) {
+      commandOne.push(name);
+    } else if (commandTwo.length < 3) {
+      commandTwo.push(name);
+    } else if (commandThree.length < 3) {
+      commandThree.push(name);
+    } else {
+      otherPlayers.push(name);
+    }
+  })
+  let result = [];
+  result.push(commandOne);
+  result.push(commandTwo);
+  result.push(commandThree);
+
+  let strResult = 'Оставшиеся студенты: ';
+  if (otherPlayers.length === 0) {
+    strResult + '-';
+  } else {
+    otherPlayers.forEach(name => {
+      strResult += `${name} `;
+    })
+    strResult = strResult.slice(0, -1);
+    result.push(strResult);
+  }
+  console.log(otherPlayers);
+  console.log(result);
+
+}
+
+sortStudentsByGroups(students);
+
+// lvlUp
+
+let students1 = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Tedji'];
+
+function sortStudentsByGroups(arr) {
+  let namesRegistry = arr.sort();
+
+  let commandOne = [], commandTwo = [], commandThree = [], otherPlayers = [];
+  namesRegistry.forEach(name => {
+    if (commandOne.length < 3) {
+      commandOne.push(name);
+    } else if (commandTwo.length < 3) {
+      commandTwo.push(name);
+    } else if (commandThree.length < 3) {
+      commandThree.push(name);
+    } else {
+      otherPlayers.push(name);
+    }
+  })
+  
+  return console.log([commandOne, commandTwo, commandThree, `Оставшиеся студенты: ${otherPlayers.length === 0 ? '-' : otherPlayers.join(', ')}`])
+}
+
+sortStudentsByGroups(students1);
+
+// another practiceCase_19
