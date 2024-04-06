@@ -2,15 +2,38 @@
 body, html {
   height: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+.score {
+  display: flex;
+  justify-content: space-around;
+  height: 10%;
+}
 
+#textScore {
+  font-size: x-large;
+  margin-top: 2%;
+}
+
+.christScore, .roundScore {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+}
+
+.christScore p, .roundScore p {
+  margin-right: 20px;
+}
+
+.gameSection {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
 
 .game {
-  display: flex;
+
+  align-items: center;
   flex-direction: column;
   border: 1rem;
   border-color: black;
@@ -22,6 +45,37 @@ body, html {
 }
 
 .btn {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+
+.history {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-text {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  margin-bottom: 2rem;
+}
+
+#matchHistory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1%;
+}
+
+.border {
   width: 100px;
   height: 100px;
   border: 1px solid #000;
