@@ -87,8 +87,8 @@ function handleClick() {
   if (queue == 0) {
       this.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-      <line x1="10" y1="10" x2="90" y2="90" stroke="black" stroke-width="10"/>
-      <line x1="10" y1="90" x2="90" y2="10" stroke="black" stroke-width="10"/>
+      <line x1="10" y1="10" x2="90" y2="90" stroke="#ffc400" stroke-width="10"/>
+      <line x1="10" y1="90" x2="90" y2="10" stroke="#ffc400" stroke-width="10"/>
       </svg>
       `;
       this.classList.add('christ');
@@ -97,7 +97,7 @@ function handleClick() {
   } else if (queue == 1){
       this.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-      <circle cx="50" cy="50" r="40" stroke="black" stroke-width="10" fill="none"/>
+      <circle cx="50" cy="50" r="40" stroke="#CAFF33" stroke-width="10" fill="none"/>
       </svg>
       `;
       this.classList.add('round');
@@ -134,3 +134,41 @@ function reset() {
   enableButtons();
 }
 
+
+
+
+
+var darkThemeContainer = document.getElementById("dark-theme-container");
+
+
+var darkThemeImg = document.getElementById("dark-theme-svg");
+var colorChangeButton = document.getElementById("colorChangeButton");
+
+colorChangeButton.addEventListener("click", function() {
+  var currentSrc = darkThemeImg.src;
+    
+
+    if (currentSrc.endsWith("dark-theme.svg")) {
+      darkThemeImg.src = "img/_2/dark-theme-v2.svg";
+    } else {
+      darkThemeImg.src = "img/_2/dark-theme.svg";
+    }
+});
+
+darkThemeContainer.addEventListener("click", function() {
+  var currentColor = getComputedStyle(document.documentElement).getPropertyValue('--1-color');
+  var rootStyles = document.documentElement.style;
+  if (currentColor === '#F8F6E3') {
+    document.documentElement.style.setProperty('--1-color', '#191919');
+    document.documentElement.style.setProperty('--2-color', '#1C1C1C');
+    document.documentElement.style.setProperty('--3-color', '#333333');
+    document.documentElement.style.setProperty('--4-color', '#D1FF4C');
+    document.documentElement.style.setProperty('--5-color', '#CAFF33');
+  } else {
+    document.documentElement.style.setProperty('--1-color', '#F8F6E3');
+    document.documentElement.style.setProperty('--2-color', '#97E7E1');
+    document.documentElement.style.setProperty('--3-color', '#6AD4DD');
+    document.documentElement.style.setProperty('--4-color', '#89b5fc');
+    document.documentElement.style.setProperty('--5-color', '#4f72aa');
+  }
+});

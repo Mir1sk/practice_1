@@ -1,28 +1,70 @@
 
 body, html {
   height: 100%;
-  margin: 0;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--1-color);
+  perspective: 1000px;
 }
 
 .score {
+padding: 10px 0 0 0;
+  display: flex;
+  justify-content:center;
+  height: auto;
+  width: 100%;
+}
+
+#score-container {
+  margin: 0 0.5rem;
   display: flex;
   justify-content: space-around;
-  height: 10%;
+  padding: 10px;
+  width: 100%;
+  scale: 1.0;
+  border-radius: 2rem;
+  background-color: var(--2-color);
+  border-bottom: 4px solid var(--3-color);
+}
+
+#dark-theme-container {
+  position: absolute;
+  translate: -0.15rem 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#dark-theme-svg {
+  width: 3rem;
+  fill: #6AD4DD;
+}
+
+#dark-theme-svg:hover {
+  transition: ease 0.3s;
+  filter: brightness(110%);
+}
+
+#textScore-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 #textScore {
+  display: flex;
   font-size: x-large;
   margin-top: 2%;
+  color: var(--5-color);
 }
 
-.christScore, .roundScore {
-  display: flex;
+#christScore, #roundScore {
   align-items: center;
-  font-size: x-large;
+  color: var(--5-color);
 }
 
-.christScore p, .roundScore p {
-  margin-right: 20px;
+#christValue, #roundValue {
+  margin: 40%;
 }
 
 .gameSection {
@@ -31,12 +73,10 @@ body, html {
   justify-content: center;
 }
 
-.game {
-
+#game {
+  margin-top: 1rem;
   align-items: center;
   flex-direction: column;
-  border: 1rem;
-  border-color: black;
   height: 50%;
 }
 
@@ -47,11 +87,61 @@ body, html {
 .btn {
   width: 100px;
   height: 100px;
-  border: 1px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1px;
+  background-color: var(--2-color);
+}
+
+.btn:hover {
+  transition: ease 0.3s;
+  filter: brightness(125%);
+}
+
+#a1 {
+  border-radius: 1rem 0 0 0;
+  border-right: 1px solid var(--3-color);
+}
+
+#a2 {
+  border-right: 1px solid var(--3-color);
+}
+
+#a3 {
+  border-radius: 0 1rem 0 0;
+}
+
+#b1 {
+  border-top: 1px solid var(--3-color);
+  border-right: 1px solid var(--3-color);
+}
+
+#b2 {
+  border-top: 1px solid var(--3-color);
+  border-right: 1px solid var(--3-color);
+}
+
+#b3 {
+  border-top: 1px solid var(--3-color);
+}
+
+#c1 {
+  border-radius: 0 0 0 1rem;
+  border-top: 1px solid var(--3-color);
+  border-right: 1px solid var(--3-color);
+  border-bottom: 4px solid var(--3-color);
+}
+
+#c2 {
+  border-top: 1px solid var(--3-color);
+  border-right: 1px solid var(--3-color);
+  border-bottom: 4px solid var(--3-color);
+}
+
+#c3 {
+  border-radius: 0 0 1rem 0;
+  border-top: 1px solid var(--3-color);
+  border-bottom: 4px solid var(--3-color);
 }
 
 .history {
@@ -66,6 +156,7 @@ body, html {
   justify-content: center;
   font-size: x-large;
   margin-bottom: 2rem;
+  color: var(--5-color);
 }
 
 #matchHistory {
@@ -73,14 +164,49 @@ body, html {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1%;
+  padding-bottom: 5rem;
 }
 
 .border {
   width: 100px;
   height: 100px;
-  border: 1px solid #000;
+  background-color: var(--2-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1px;
 }
+
+
+
+
+@media only screen and (min-width: 900px) {
+  #score-container {
+    margin: 0 10rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #score-container {
+    margin: 0 20rem;
+  }
+}
+
+
+
+
+:root {
+  --1-color: #F8F6E3;
+  --2-color: #97E7E1;
+  --3-color: #6AD4DD;
+  --4-color: #89b5fc;
+  --5-color: #4f72aa;
+}
+
+/* :root {
+  --1-color: #191919;
+  --2-color: #1C1C1C;
+  --3-color: #333333;
+  --4-color: #D1FF4C;
+  --5-color: #CAFF33;
+} */
+
